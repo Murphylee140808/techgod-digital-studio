@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -12,12 +13,9 @@ import {
   Code2,
   Compass,
   Gauge,
-  Github,
   Globe2,
-  Instagram,
   Layers,
   Layout,
-  Linkedin,
   Mail,
   MapPin,
   Palette,
@@ -30,6 +28,44 @@ import {
   TrendingUp,
   Wrench,
 } from "lucide-react";
+
+/* Social icons (lucide-react in this project doesn't export brand icons) */
+const svgProps = {
+  viewBox: "0 0 24 24",
+  fill: "currentColor",
+  "aria-hidden": true,
+} as const;
+
+function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...svgProps} {...props}>
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z" />
+    </svg>
+  );
+}
+function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...svgProps} fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...svgProps} {...props}>
+      <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.57.1.78-.25.78-.55v-2.02c-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
+    </svg>
+  );
+}
+function UpworkIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...svgProps} {...props}>
+      <path d="M18.6 8.4c-2 0-3.6 1.3-4.3 3.4-1-1.5-1.8-3.4-2.3-5H9.4v6.1c0 1.2-1 2.2-2.2 2.2S5 14.1 5 12.9V6.8H2.4v6.1c0 2.6 2.1 4.8 4.7 4.8s4.7-2.2 4.7-4.8v-1c.5 1 1.1 2.1 1.8 3.1L12.1 21h2.7l1-4.7c.9.6 1.9 1 3 1 2.5 0 4.6-2.1 4.6-4.6s-2.2-4.3-4.8-4.3zm0 6.4c-.8 0-1.6-.4-2.2-.9l.2-.9c.3-1.4 1-2.2 2-2.2 1 0 1.9.9 1.9 1.9 0 1.2-.9 2.1-1.9 2.1z" />
+    </svg>
+  );
+}
 
 import portraitAsset from "@/assets/portrait.asset.json";
 import project1Asset from "@/assets/project1.asset.json";
@@ -288,16 +324,16 @@ const faqs = [
 
 /* ---------------------------- Motion helpers ---------------------------- */
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  visible: (i = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: "easeOut", delay: i * 0.08 },
-  }),
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
-const container = {
+const container: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
 };
