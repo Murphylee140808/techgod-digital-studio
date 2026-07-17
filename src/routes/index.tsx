@@ -1104,9 +1104,10 @@ function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-2">
               {[
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Instagram, href: "#", label: "Instagram" },
-                { icon: Github, href: "#", label: "GitHub" },
+                { icon: UpworkIcon, href: "#", label: "Upwork" },
+                { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
+                { icon: InstagramIcon, href: "#", label: "Instagram" },
+                { icon: GithubIcon, href: "#", label: "GitHub" },
                 { icon: Mail, href: "mailto:hello@techgod.dev", label: "Email" },
               ].map((s) => (
                 <a
