@@ -77,14 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Techgod — Squarespace Website Designer & Developer" },
+      {
+        name: "description",
+        content:
+          "Omowumi A. (Techgod) designs premium Squarespace websites that generate leads and convert visitors into clients. 60+ projects · Top Rated Upwork · 100% Job Success.",
+      },
+      { name: "author", content: "Omowumi A. (Techgod)" },
+      { property: "og:title", content: "Techgod — Squarespace Website Designer & Developer" },
+      {
+        property: "og:description",
+        content:
+          "Premium Squarespace websites for coaches, consultants and creative brands. Built to generate leads and grow your business.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Techgod" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Techgod — Squarespace Website Designer & Developer" },
+      {
+        name: "twitter:description",
+        content:
+          "Premium Squarespace websites that generate leads and convert visitors into clients.",
+      },
+      { name: "theme-color", content: "#0F172A" },
     ],
     links: [
       {
@@ -92,6 +107,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              name: "Omowumi A.",
+              alternateName: "Techgod",
+              jobTitle: "Squarespace Website Designer & Developer",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Port Harcourt",
+                addressCountry: "Nigeria",
+              },
+              knowsAbout: [
+                "Squarespace",
+                "Web Design",
+                "SEO",
+                "Conversion Optimization",
+              ],
+            },
+            {
+              "@type": "ProfessionalService",
+              name: "Techgod",
+              description:
+                "Premium Squarespace website design and development for coaches, consultants, creatives and service businesses.",
+              areaServed: "Worldwide",
+              provider: { "@type": "Person", name: "Omowumi A." },
+            },
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
