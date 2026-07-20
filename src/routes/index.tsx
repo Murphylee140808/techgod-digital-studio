@@ -847,13 +847,6 @@ function Work() {
                     ))}
                   </div>
 
-                  <a
-                    href="#contact"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-navy transition hover:text-emerald"
-                  >
-                    View Live Site
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
                 </div>
               </motion.article>
             ))}
