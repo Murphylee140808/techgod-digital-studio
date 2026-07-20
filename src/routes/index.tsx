@@ -761,14 +761,14 @@ function Work() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="Selected work"
+            eyebrow="Featured Case Study · GreenHaven Landscapes"
             title={
               <>
-                Recent Squarespace projects,{" "}
-                <span className="text-emerald">built to convert</span>.
+                Squarespace{" "}
+                <span className="text-emerald">Landscape Web Design</span> — GreenHaven Landscapes.
               </>
             }
-            desc="A snapshot of client work across industries — every site is designed for clarity, credibility and inbound leads."
+            desc="Role: Squarespace Web Designer & Developer · Custom Website & SEO Specialist. GreenHaven Landscapes needed a premium Squarespace site to showcase their services, generate leads, and make it easy for homeowners to book consultations. I built a custom Squarespace 7.1 site with Fluid Engine — responsive layouts, service pages, project galleries, contact forms, custom CSS, local SEO and an easy content system needing no developer. The result: a modern, high-converting site that boosts credibility, engagement, local visibility and turns visitors into consultation requests."
           />
           <div className="flex flex-wrap gap-2">
             {categories.map((c) => (
