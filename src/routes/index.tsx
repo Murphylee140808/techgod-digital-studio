@@ -68,10 +68,10 @@ function UpworkIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 import portraitAsset from "@/assets/portrait.asset.json";
-import project1Asset from "@/assets/project1.asset.json";
-import project2Asset from "@/assets/project2.asset.json";
-import project3Asset from "@/assets/project3.asset.json";
-import project4Asset from "@/assets/project4.asset.json";
+import greenhavenDevicesAsset from "@/assets/greenhaven-devices.png.asset.json";
+import greenhavenServicesAsset from "@/assets/greenhaven-services.png.asset.json";
+import greenhavenPortfolioAsset from "@/assets/greenhaven-portfolio.png.asset.json";
+import greenhavenContactAsset from "@/assets/greenhaven-contact.png.asset.json";
 import { Nav } from "@/components/portfolio/Nav";
 import { Counter } from "@/components/portfolio/Counter";
 
@@ -187,52 +187,56 @@ const projects: {
   image: string;
 }[] = [
   {
-    title: "Estate & Co.",
-    industry: "Interior Design & Real Estate",
+    title: "GreenHaven Landscapes — Multi-Device Preview",
+    industry: "Squarespace Landscape Web Design",
     category: "Business",
     overview:
-      "A refined Squarespace site for a luxury interior and property studio, unifying listings, story and services.",
-    challenge: "Outdated site with weak imagery hierarchy and no clear inquiry path.",
+      "GreenHaven Landscapes needed a premium Squarespace site to showcase their services, generate leads and make it easy for homeowners to book consultations. A fully responsive Squarespace 7.1 build presented cleanly across desktop, tablet and mobile.",
+    challenge:
+      "Their old site lacked modern design and clear CTAs, and did not adapt well beyond desktop.",
     solution:
-      "Editorial layout, warm neutral palette and a booking-first CTA structure across every page.",
-    tech: ["Squarespace 7.1", "Custom CSS", "Acuity", "SEO"],
-    image: project1Asset.url,
+      "A responsive Fluid Engine layout with a brand-forward hero, clear service tiles and a persistent quote CTA that carries through every device.",
+    tech: ["Squarespace 7.1", "Fluid Engine", "Responsive Design", "Custom CSS"],
+    image: greenhavenDevicesAsset.url,
   },
   {
-    title: "MediCare Plus",
-    industry: "Wellness & Healthcare",
-    category: "Wellness",
+    title: "GreenHaven Landscapes — Services & Value",
+    industry: "Squarespace Landscape Web Design",
+    category: "Business",
     overview:
-      "A calm, trust-first Squarespace site for a multi-specialty wellness clinic and its practitioners.",
-    challenge: "Complex service catalogue with low mobile conversion.",
+      "A dedicated services architecture that lets homeowners understand offerings at a glance and move straight to a consultation request.",
+    challenge:
+      "Complex service catalogue previously buried in long paragraphs — homeowners bounced without an inquiry.",
     solution:
-      "Clear service architecture, sticky appointment CTA and refined mobile-first components.",
-    tech: ["Squarespace 7.1", "Custom JS", "Acuity", "Schema.org"],
-    image: project2Asset.url,
+      "Structured service cards, a supporting testimonial rail and a 'Why Choose Us' band that reinforces credibility before the CTA.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Content Strategy", "Local SEO"],
+    image: greenhavenServicesAsset.url,
   },
   {
-    title: "LogiFleet & Co.",
-    industry: "B2B Consulting & Logistics",
-    category: "Consulting",
+    title: "GreenHaven Landscapes — Portfolio Gallery",
+    industry: "Squarespace Landscape Web Design",
+    category: "Portfolio",
     overview:
-      "A confident, corporate Squarespace site for a global logistics consultancy with live tracking demos.",
-    challenge: "Needed to feel enterprise-grade while staying easy to update in-house.",
+      "A filterable project gallery that lets prospects self-qualify by project type — residential, outdoor living, garden design or landscape construction.",
+    challenge:
+      "Beautiful project photography was scattered across social channels and never converted to inquiries on-site.",
     solution:
-      "Custom Squarespace sections, gated case studies and a clean quote-request workflow.",
-    tech: ["Squarespace 7.1", "Custom CSS", "Forms", "GA4"],
-    image: project3Asset.url,
+      "A performant Squarespace gallery with category filtering, editorial captions and inline consultation CTAs on each card.",
+    tech: ["Squarespace 7.1", "Custom Gallery", "Image Optimisation", "SEO"],
+    image: greenhavenPortfolioAsset.url,
   },
   {
-    title: "Wanderlust Voyages",
-    industry: "Creative Agency & Hospitality",
-    category: "E-commerce",
+    title: "GreenHaven Landscapes — Consultation Flow",
+    industry: "Squarespace Landscape Web Design",
+    category: "Business",
     overview:
-      "A boutique Squarespace store for curated travel experiences, blending editorial storytelling with commerce.",
-    challenge: "Balance rich imagery with fast performance and frictionless booking.",
+      "A friction-free lead capture experience — a clear consultation form, a 'schedule a call' path and a benefits panel that closes the sale.",
+    challenge:
+      "The previous contact page was a single email link — no context, no qualifying questions, no scheduling.",
     solution:
-      "Optimised media pipeline, custom product templates and integrated booking on every card.",
-    tech: ["Squarespace Commerce", "Custom CSS", "Stripe", "SEO"],
-    image: project4Asset.url,
+      "A structured Squarespace form with service selection, integrated scheduling and a supporting value panel that reassures the homeowner.",
+    tech: ["Squarespace Forms", "Acuity Scheduling", "Local SEO", "Analytics"],
+    image: greenhavenContactAsset.url,
   },
 ];
 
@@ -757,14 +761,14 @@ function Work() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="Selected work"
+            eyebrow="Featured Case Study · GreenHaven Landscapes"
             title={
               <>
-                Recent Squarespace projects,{" "}
-                <span className="text-emerald">built to convert</span>.
+                Squarespace{" "}
+                <span className="text-emerald">Landscape Web Design</span> — GreenHaven Landscapes.
               </>
             }
-            desc="A snapshot of client work across industries — every site is designed for clarity, credibility and inbound leads."
+            desc="Role: Squarespace Web Designer & Developer · Custom Website & SEO Specialist. GreenHaven Landscapes needed a premium Squarespace site to showcase their services, generate leads, and make it easy for homeowners to book consultations. I built a custom Squarespace 7.1 site with Fluid Engine — responsive layouts, service pages, project galleries, contact forms, custom CSS, local SEO and an easy content system needing no developer. The result: a modern, high-converting site that boosts credibility, engagement, local visibility and turns visitors into consultation requests."
           />
           <div className="flex flex-wrap gap-2">
             {categories.map((c) => (
