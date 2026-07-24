@@ -91,7 +91,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "60+ premium Squarespace websites shipped. Top Rated on Upwork with a 100% Job Success Score.",
+          "60+ premium Squarespace websites shipped with a 100% Job Success Score.",
       },
       { property: "og:url", content: "/" },
       { property: "og:image", content: portraitAsset.url },
