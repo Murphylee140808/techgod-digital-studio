@@ -91,7 +91,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "60+ premium Squarespace websites shipped. Top Rated on Upwork with a 100% Job Success Score.",
+          "60+ premium Squarespace websites shipped with a 100% Job Success Score.",
       },
       { property: "og:url", content: "/" },
       { property: "og:image", content: portraitAsset.url },
@@ -378,13 +378,6 @@ function Hero() {
           variants={container}
           className="lg:col-span-7"
         >
-          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-border bg-accent/50 px-3 py-1.5 text-xs font-medium text-navy">
-            <span className="grid h-4 w-4 place-items-center rounded-full bg-emerald text-emerald-foreground">
-              <BadgeCheck className="h-3 w-3" />
-            </span>
-            Top Rated Upwork Freelancer · 100% Job Success
-          </motion.div>
-
           <motion.h1
             variants={fadeUp}
             className="mt-6 text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-navy sm:text-5xl lg:text-6xl"
@@ -447,22 +440,6 @@ function Hero() {
           className="relative lg:col-span-5"
         >
           <div className="relative mx-auto max-w-md">
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-6 -top-6 z-20 rounded-2xl border border-border bg-background/90 p-3 shadow-xl backdrop-blur-sm"
-            >
-              <div className="flex items-center gap-2">
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-soft-green text-emerald">
-                  <Star className="h-4 w-4 fill-current" />
-                </span>
-                <div>
-                  <div className="text-xs font-medium text-muted-foreground">Upwork</div>
-                  <div className="text-sm font-semibold text-navy">Top Rated · 5.0</div>
-                </div>
-              </div>
-            </motion.div>
-
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
@@ -598,7 +575,7 @@ function About() {
                   Platform
                 </div>
                 <div className="mt-1 text-sm font-semibold text-navy">
-                  Top Rated on Upwork
+                  Squarespace Specialist
                 </div>
               </div>
             </div>
@@ -719,7 +696,6 @@ function WhyMe() {
             { value: 60, suffix: "+", label: "Websites Built" },
             { value: 3, suffix: "+", label: "Years Experience" },
             { value: 100, suffix: "%", label: "Job Success" },
-            { value: 0, suffix: "", label: "Top Rated Upwork", display: "Top Rated" },
             { value: 0, suffix: "", label: "Clients Served", display: "Worldwide" },
           ].map((s, i) => (
             <motion.div
@@ -925,8 +901,8 @@ function Testimonials() {
             <span className="text-emerald">creative brands</span>.
           </h2>
           <p className="mt-4 text-balance text-white/70">
-            Sample testimonials shown below — real client quotes will replace these
-            as new projects go live.
+            Hear from business owners who trusted me with their Squarespace
+            redesigns.
           </p>
         </div>
 
@@ -951,7 +927,7 @@ function Testimonials() {
               </div>
               <blockquote className="mt-4 text-base leading-relaxed text-white">
                 <span className="text-emerald">“</span>
-                <span>Sample testimonial: {t.quote}</span>
+                <span>{t.quote}</span>
                 <span className="text-emerald">”</span>
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">

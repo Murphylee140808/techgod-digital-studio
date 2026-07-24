@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Omowumi A. (Techgod) designs premium Squarespace websites that generate leads and convert visitors into clients. 60+ projects · Top Rated Upwork · 100% Job Success.",
+          "Omowumi A. (Techgod) designs premium Squarespace websites that generate leads and convert visitors into clients. 60+ projects · 100% Job Success.",
       },
       { name: "author", content: "Omowumi A. (Techgod)" },
       { property: "og:title", content: "Techgod — Squarespace Website Designer & Developer" },
