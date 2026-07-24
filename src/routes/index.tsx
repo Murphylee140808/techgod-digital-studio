@@ -933,7 +933,7 @@ function Testimonials() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0.05 }}
           variants={container}
           className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2"
         >
@@ -942,14 +942,14 @@ function Testimonials() {
               key={t.name}
               variants={fadeUp}
               whileHover={{ y: -4 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_20px_60px_-20px_rgb(0_0_0_/_0.5)]"
+              className="rounded-3xl border border-white/15 bg-white/[0.06] p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_20px_60px_-20px_rgb(0_0_0_/_0.5)]"
             >
               <div className="flex gap-0.5 text-emerald">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <blockquote className="mt-4 text-base leading-relaxed text-white/90">
+              <blockquote className="mt-4 text-base leading-relaxed text-white">
                 <span className="text-emerald">“</span>
                 <span>Sample testimonial: {t.quote}</span>
                 <span className="text-emerald">”</span>
@@ -959,8 +959,8 @@ function Testimonials() {
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="text-sm font-semibold">{t.name}</div>
-                  <div className="text-xs text-white/60">{t.role}</div>
+                  <div className="text-sm font-semibold text-white">{t.name}</div>
+                  <div className="text-xs text-white/70">{t.role}</div>
                 </div>
               </figcaption>
             </motion.figure>
