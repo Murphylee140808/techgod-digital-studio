@@ -901,8 +901,8 @@ function Testimonials() {
             <span className="text-emerald">creative brands</span>.
           </h2>
           <p className="mt-4 text-balance text-white/70">
-            Sample testimonials shown below — real client quotes will replace these
-            as new projects go live.
+            Hear from business owners who trusted me with their Squarespace
+            redesigns.
           </p>
         </div>
 
@@ -927,7 +927,7 @@ function Testimonials() {
               </div>
               <blockquote className="mt-4 text-base leading-relaxed text-white">
                 <span className="text-emerald">“</span>
-                <span>Sample testimonial: {t.quote}</span>
+                <span>{t.quote}</span>
                 <span className="text-emerald">”</span>
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
