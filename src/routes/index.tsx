@@ -68,10 +68,10 @@ function UpworkIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 import portraitAsset from "@/assets/portrait.asset.json";
-import greenhavenDevicesAsset from "@/assets/greenhaven-devices.png.asset.json";
-import greenhavenServicesAsset from "@/assets/greenhaven-services.png.asset.json";
-import greenhavenPortfolioAsset from "@/assets/greenhaven-portfolio.png.asset.json";
-import greenhavenContactAsset from "@/assets/greenhaven-contact.png.asset.json";
+import project1Asset from "@/assets/project1.asset.json";
+import project2Asset from "@/assets/project2.asset.json";
+import project3Asset from "@/assets/project3.asset.json";
+import project4Asset from "@/assets/project4.asset.json";
 import { Nav } from "@/components/portfolio/Nav";
 import { Counter } from "@/components/portfolio/Counter";
 
@@ -187,56 +187,52 @@ const projects: {
   image: string;
 }[] = [
   {
-    title: "GreenHaven Landscapes — Multi-Device Preview",
-    industry: "Squarespace Landscape Web Design",
+    title: "Estate & Co.",
+    industry: "Interior Design & Real Estate",
     category: "Business",
     overview:
-      "GreenHaven Landscapes needed a premium Squarespace site to showcase their services, generate leads and make it easy for homeowners to book consultations. A fully responsive Squarespace 7.1 build presented cleanly across desktop, tablet and mobile.",
-    challenge:
-      "Their old site lacked modern design and clear CTAs, and did not adapt well beyond desktop.",
+      "A refined Squarespace site for a luxury interior and property studio, unifying listings, story and services.",
+    challenge: "Outdated site with weak imagery hierarchy and no clear inquiry path.",
     solution:
-      "A responsive Fluid Engine layout with a brand-forward hero, clear service tiles and a persistent quote CTA that carries through every device.",
-    tech: ["Squarespace 7.1", "Fluid Engine", "Responsive Design", "Custom CSS"],
-    image: greenhavenDevicesAsset.url,
+      "Editorial layout, warm neutral palette and a booking-first CTA structure across every page.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Acuity", "SEO"],
+    image: project1Asset.url,
   },
   {
-    title: "GreenHaven Landscapes — Services & Value",
-    industry: "Squarespace Landscape Web Design",
-    category: "Business",
+    title: "MediCare Plus",
+    industry: "Wellness & Healthcare",
+    category: "Wellness",
     overview:
-      "A dedicated services architecture that lets homeowners understand offerings at a glance and move straight to a consultation request.",
-    challenge:
-      "Complex service catalogue previously buried in long paragraphs — homeowners bounced without an inquiry.",
+      "A calm, trust-first Squarespace site for a multi-specialty wellness clinic and its practitioners.",
+    challenge: "Complex service catalogue with low mobile conversion.",
     solution:
-      "Structured service cards, a supporting testimonial rail and a 'Why Choose Us' band that reinforces credibility before the CTA.",
-    tech: ["Squarespace 7.1", "Custom CSS", "Content Strategy", "Local SEO"],
-    image: greenhavenServicesAsset.url,
+      "Clear service architecture, sticky appointment CTA and refined mobile-first components.",
+    tech: ["Squarespace 7.1", "Custom JS", "Acuity", "Schema.org"],
+    image: project2Asset.url,
   },
   {
-    title: "GreenHaven Landscapes — Portfolio Gallery",
-    industry: "Squarespace Landscape Web Design",
-    category: "Portfolio",
+    title: "LogiFleet & Co.",
+    industry: "B2B Consulting & Logistics",
+    category: "Consulting",
     overview:
-      "A filterable project gallery that lets prospects self-qualify by project type — residential, outdoor living, garden design or landscape construction.",
-    challenge:
-      "Beautiful project photography was scattered across social channels and never converted to inquiries on-site.",
+      "A confident, corporate Squarespace site for a global logistics consultancy with live tracking demos.",
+    challenge: "Needed to feel enterprise-grade while staying easy to update in-house.",
     solution:
-      "A performant Squarespace gallery with category filtering, editorial captions and inline consultation CTAs on each card.",
-    tech: ["Squarespace 7.1", "Custom Gallery", "Image Optimisation", "SEO"],
-    image: greenhavenPortfolioAsset.url,
+      "Custom Squarespace sections, gated case studies and a clean quote-request workflow.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Forms", "GA4"],
+    image: project3Asset.url,
   },
   {
-    title: "GreenHaven Landscapes — Consultation Flow",
-    industry: "Squarespace Landscape Web Design",
-    category: "Business",
+    title: "Wanderlust Voyages",
+    industry: "Creative Agency & Hospitality",
+    category: "E-commerce",
     overview:
-      "A friction-free lead capture experience — a clear consultation form, a 'schedule a call' path and a benefits panel that closes the sale.",
-    challenge:
-      "The previous contact page was a single email link — no context, no qualifying questions, no scheduling.",
+      "A boutique Squarespace store for curated travel experiences, blending editorial storytelling with commerce.",
+    challenge: "Balance rich imagery with fast performance and frictionless booking.",
     solution:
-      "A structured Squarespace form with service selection, integrated scheduling and a supporting value panel that reassures the homeowner.",
-    tech: ["Squarespace Forms", "Acuity Scheduling", "Local SEO", "Analytics"],
-    image: greenhavenContactAsset.url,
+      "Optimised media pipeline, custom product templates and integrated booking on every card.",
+    tech: ["Squarespace Commerce", "Custom CSS", "Stripe", "SEO"],
+    image: project4Asset.url,
   },
 ];
 
@@ -937,7 +933,7 @@ function Testimonials() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0.05 }}
           variants={container}
           className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2"
         >
@@ -946,14 +942,14 @@ function Testimonials() {
               key={t.name}
               variants={fadeUp}
               whileHover={{ y: -4 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_20px_60px_-20px_rgb(0_0_0_/_0.5)]"
+              className="rounded-3xl border border-white/15 bg-white/[0.06] p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_20px_60px_-20px_rgb(0_0_0_/_0.5)]"
             >
               <div className="flex gap-0.5 text-emerald">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <blockquote className="mt-4 text-base leading-relaxed text-white/90">
+              <blockquote className="mt-4 text-base leading-relaxed text-white">
                 <span className="text-emerald">“</span>
                 <span>Sample testimonial: {t.quote}</span>
                 <span className="text-emerald">”</span>
@@ -963,8 +959,8 @@ function Testimonials() {
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="text-sm font-semibold">{t.name}</div>
-                  <div className="text-xs text-white/60">{t.role}</div>
+                  <div className="text-sm font-semibold text-white">{t.name}</div>
+                  <div className="text-xs text-white/70">{t.role}</div>
                 </div>
               </figcaption>
             </motion.figure>
