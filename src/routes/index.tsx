@@ -72,6 +72,15 @@ import project1Asset from "@/assets/project1.asset.json";
 import project2Asset from "@/assets/project2.asset.json";
 import project3Asset from "@/assets/project3.asset.json";
 import project4Asset from "@/assets/project4.asset.json";
+import vioraAsset from "@/assets/viora.asset.json";
+import pianoAsset from "@/assets/piano.asset.json";
+import calmAsset from "@/assets/calm.asset.json";
+import luxeAsset from "@/assets/luxe.asset.json";
+import auraAsset from "@/assets/aura.asset.json";
+import coastlineAsset from "@/assets/coastline.asset.json";
+import clearpathAsset from "@/assets/clearpath.asset.json";
+import lumenAsset from "@/assets/lumen.asset.json";
+import lakeislandAsset from "@/assets/lakeisland.asset.json";
 import { Nav } from "@/components/portfolio/Nav";
 import { Counter } from "@/components/portfolio/Counter";
 
