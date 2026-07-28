@@ -243,6 +243,114 @@ const projects: {
     tech: ["Squarespace Commerce", "Custom CSS", "Stripe", "SEO"],
     image: project4Asset.url,
   },
+  {
+    title: "Viora Journal",
+    industry: "Editorial & Media",
+    category: "Portfolio",
+    overview:
+      "A refined editorial Squarespace site for a lifestyle publication covering tools, productivity and better living.",
+    challenge: "Needed a magazine feel with fast article discovery and a strong newsletter funnel.",
+    solution:
+      "Editorial hero, category-driven article grid, affiliate-ready product blocks and a sticky subscribe CTA.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Newsletter", "SEO"],
+    image: vioraAsset.url,
+  },
+  {
+    title: "Piano Fundamentals",
+    industry: "Online Learning",
+    category: "E-commerce",
+    overview:
+      "A cinematic dark-mode course platform for a music educator selling structured lessons and progress tracking.",
+    challenge: "Balance a premium visual feel with a clear course dashboard and lesson flow.",
+    solution:
+      "Custom dark UI, member area layout, lesson progress indicators and gated content pages.",
+    tech: ["Squarespace Member Areas", "Custom CSS", "Stripe", "Video"],
+    image: pianoAsset.url,
+  },
+  {
+    title: "Calm Horizons Therapy",
+    industry: "Wellness & Telehealth",
+    category: "Wellness",
+    overview:
+      "A warm, trust-first Squarespace site for a private telehealth therapy and wellness practice.",
+    challenge: "Convey compassion and clinical credibility while making booking effortless.",
+    solution:
+      "Editorial hero, service accordions, evidence-based trust bar and a sticky consultation CTA.",
+    tech: ["Squarespace 7.1", "Acuity", "Custom CSS", "Local SEO"],
+    image: calmAsset.url,
+  },
+  {
+    title: "Luxe Society",
+    industry: "Private Membership",
+    category: "Business",
+    overview:
+      "A dark, editorial members-only Squarespace site for a private social club focused on events and community.",
+    challenge: "Premium members-only feel with gated events, application flow and member area.",
+    solution:
+      "Cinematic dark UI, member login, event calendar with upcoming/past tabs and application funnel.",
+    tech: ["Squarespace Member Areas", "Custom CSS", "Forms", "Events"],
+    image: luxeAsset.url,
+  },
+  {
+    title: "Aura Interiors",
+    industry: "Interior Design & Retail",
+    category: "E-commerce",
+    overview:
+      "A minimal, editorial Squarespace site pairing an interior design portfolio with a curated object shop.",
+    challenge: "Blend a portfolio-first story with a functioning commerce catalog without visual clutter.",
+    solution:
+      "Serif-led editorial layout, filterable portfolio grid and clean product templates with cart.",
+    tech: ["Squarespace Commerce", "Custom CSS", "Stripe", "SEO"],
+    image: auraAsset.url,
+  },
+  {
+    title: "Coastline Marketing",
+    industry: "Marketing Agency",
+    category: "Consulting",
+    overview:
+      "A confident editorial Squarespace site for a strategic digital marketing agency positioning premium services.",
+    challenge: "Feel senior and outcome-driven while explaining a full-funnel service menu.",
+    solution:
+      "Bold serif hero, image-led service grid, four-step process module and lead capture on every page.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Forms", "GA4"],
+    image: coastlineAsset.url,
+  },
+  {
+    title: "ClearPath Financial",
+    industry: "Financial Advisory",
+    category: "Consulting",
+    overview:
+      "A trust-first Squarespace site for a financial planning firm helping business owners simplify tax and wealth.",
+    challenge: "Communicate authority and clarity while driving qualified consultation bookings.",
+    solution:
+      "Editorial hero, navy trust bar, four-step process module and a consultation form on every page.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Acuity", "SEO"],
+    image: clearpathAsset.url,
+  },
+  {
+    title: "Lumen Visuals",
+    industry: "Photography & Video",
+    category: "Portfolio",
+    overview:
+      "A cinematic Squarespace portfolio for a luxury real estate photography, staging and videography studio.",
+    challenge: "Showcase high-resolution imagery beautifully without hurting performance.",
+    solution:
+      "Full-bleed hero, filterable portfolio grid by category and a streamlined project inquiry form.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Image Optimisation", "SEO"],
+    image: lumenAsset.url,
+  },
+  {
+    title: "LakeIsland Healthcare Consulting",
+    industry: "Healthcare Consulting",
+    category: "Consulting",
+    overview:
+      "A polished Squarespace site for a Canadian healthcare consulting firm supporting leaders and organisations.",
+    challenge: "Position the firm as enterprise-grade while explaining programs and driving consultations.",
+    solution:
+      "Editorial hero, client logo trust bar, statistics module, program pages and detailed case studies.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Forms", "Schema.org"],
+    image: lakeislandAsset.url,
+  },
 ];
 
 const categories: Category[] = [
