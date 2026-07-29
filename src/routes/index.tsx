@@ -1123,6 +1123,14 @@ function FAQ() {
 }
 
 function CTA() {
+  const [form, setForm] = useState({ name: "", email: "", project: "", message: "" });
+  const CONTACT_EMAIL = "hello@techgod.dev";
+  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    `New project inquiry${form.name ? ` from ${form.name}` : ""}`,
+  )}&body=${encodeURIComponent(
+    `Name: ${form.name}\nEmail: ${form.email}\nProject type: ${form.project}\n\n${form.message}`,
+  )}`;
+
   return (
     <section id="contact" className="px-4 pb-24 sm:px-6 lg:px-8">
       <motion.div
@@ -1153,11 +1161,11 @@ function CTA() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:hello@techgod.dev"
+              href="tel:+2348104411111"
               className="group inline-flex items-center gap-2 rounded-full bg-emerald px-6 py-3.5 text-sm font-semibold text-emerald-foreground shadow-[0_12px_30px_-10px_oklch(0.63_0.17_148_/_0.7)] transition hover:translate-y-[-1px]"
             >
-              Book Free Consultation
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              <Phone className="h-4 w-4" />
+              Book a call
             </a>
             <a
               href="#work"
@@ -1166,6 +1174,72 @@ function CTA() {
               View Portfolio
             </a>
           </div>
+
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="mx-auto mt-12 max-w-2xl rounded-3xl border border-white/15 bg-white/5 p-6 text-left backdrop-blur sm:p-8"
+          >
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="cf-name" className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                  Name
+                </label>
+                <input
+                  id="cf-name"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  placeholder="Jane Doe"
+                  className="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                />
+              </div>
+              <div>
+                <label htmlFor="cf-email" className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                  Email
+                </label>
+                <input
+                  id="cf-email"
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  placeholder="you@company.com"
+                  className="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="cf-project" className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                  Project type
+                </label>
+                <input
+                  id="cf-project"
+                  value={form.project}
+                  onChange={(e) => setForm({ ...form, project: e.target.value })}
+                  placeholder="New Squarespace build, redesign, SEO…"
+                  className="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="cf-message" className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                  Project details
+                </label>
+                <textarea
+                  id="cf-message"
+                  rows={4}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  placeholder="Tell me about your business, goals, timeline and budget."
+                  className="mt-2 w-full resize-y rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                />
+              </div>
+            </div>
+            <a
+              href={mailto}
+              className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-emerald px-6 py-3.5 text-sm font-semibold text-emerald-foreground shadow-[0_12px_30px_-10px_oklch(0.63_0.17_148_/_0.7)] transition hover:translate-y-[-1px] sm:w-auto"
+            >
+              <Mail className="h-4 w-4" />
+              Send to {CONTACT_EMAIL}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </form>
         </div>
       </motion.div>
     </section>
