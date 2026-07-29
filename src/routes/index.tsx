@@ -18,6 +18,7 @@ import {
   Layout,
   Mail,
   MapPin,
+  Phone,
   Palette,
   Rocket,
   Search,
