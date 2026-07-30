@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { toast } from "sonner";
@@ -1138,6 +1138,10 @@ type FormErrors = Partial<Record<keyof ContactForm, string>>;
 function CTA() {
   const [form, setForm] = useState<ContactForm>({ name: "", email: "", project: "", message: "" });
   const [errors, setErrors] = useState<FormErrors>({});
+  // Honeypot: hidden from humans, commonly auto-filled by bots.
+  const [website, setWebsite] = useState("");
+  const formLoadedAt = useRef<number>(Date.now());
+  const [cooldownUntil, setCooldownUntil] = useState(0);
   const [touched, setTouched] = useState<Record<keyof ContactForm, boolean>>({
     name: false,
     email: false,
@@ -1145,6 +1149,29 @@ function CTA() {
     message: false,
   });
   const CONTACT_EMAIL = "hello@techgod.dev";
+  const RATE_KEY = "techgod_contact_submissions";
+  const MIN_FILL_SECONDS = 3;
+  const COOLDOWN_MS = 60_000;
+  const WINDOW_MS = 10 * 60_000;
+  const MAX_IN_WINDOW = 3;
+
+  const readHistory = (): number[] => {
+    if (typeof window === "undefined") return [];
+    try {
+      const raw = JSON.parse(window.localStorage.getItem(RATE_KEY) ?? "[]");
+      return Array.isArray(raw) ? raw.filter((t) => typeof t === "number") : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const recordSubmission = (history: number[], now: number) => {
+    try {
+      window.localStorage.setItem(RATE_KEY, JSON.stringify([...history, now]));
+    } catch {
+      /* storage unavailable — skip persistence */
+    }
+  };
 
   const validate = (data: ContactForm): FormErrors => {
     const result = contactSchema.safeParse(data);
@@ -1170,6 +1197,34 @@ function CTA() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const now = Date.now();
+
+    // 1. Honeypot — silently accept so bots don't learn they were blocked.
+    if (website.trim() !== "") {
+      setForm({ name: "", email: "", project: "", message: "" });
+      setWebsite("");
+      toast.success("Message ready to send!");
+      return;
+    }
+
+    // 2. Time trap — a real person needs more than a few seconds to fill this in.
+    if ((now - formLoadedAt.current) / 1000 < MIN_FILL_SECONDS) {
+      toast.error("That was quick! Please take a moment and try again.");
+      return;
+    }
+
+    // 3. Rate limiting — cooldown between sends plus a cap per 10 minutes.
+    const history = readHistory().filter((t) => now - t < WINDOW_MS);
+    if (now < cooldownUntil) {
+      const secs = Math.ceil((cooldownUntil - now) / 1000);
+      toast.error(`Please wait ${secs}s before sending another message.`);
+      return;
+    }
+    if (history.length >= MAX_IN_WINDOW) {
+      toast.error("Too many messages sent. Please try again in a few minutes.");
+      return;
+    }
+
     const validationErrors = validate(form);
     setTouched({ name: true, email: true, project: true, message: true });
     setErrors(validationErrors);
@@ -1193,6 +1248,9 @@ function CTA() {
     setForm({ name: "", email: "", project: "", message: "" });
     setTouched({ name: false, email: false, project: false, message: false });
     setErrors({});
+    recordSubmission(history, now);
+    setCooldownUntil(now + COOLDOWN_MS);
+    formLoadedAt.current = Date.now();
 
     // Open the user's default email client with the pre-filled inquiry.
     window.location.href = mailto;
@@ -1335,6 +1393,19 @@ function CTA() {
                   </p>
                 )}
               </div>
+            </div>
+            {/* Honeypot field — hidden from real users, bots tend to fill it. */}
+            <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+              <label htmlFor="cf-website">Website (leave blank)</label>
+              <input
+                id="cf-website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
             </div>
             <button
               type="submit"
