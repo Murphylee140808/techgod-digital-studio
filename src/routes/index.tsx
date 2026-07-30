@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { toast } from "sonner";
+import { z } from "zod";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -1123,14 +1125,83 @@ function FAQ() {
   );
 }
 
+const contactSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be under 100 characters"),
+  email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be under 255 characters"),
+  project: z.string().trim().min(2, "Project type is required").max(200, "Project type must be under 200 characters"),
+  message: z.string().trim().min(10, "Please share a few more details (at least 10 characters)").max(1000, "Message must be under 1000 characters"),
+});
+
+type ContactForm = z.infer<typeof contactSchema>;
+type FormErrors = Partial<Record<keyof ContactForm, string>>;
+
 function CTA() {
-  const [form, setForm] = useState({ name: "", email: "", project: "", message: "" });
+  const [form, setForm] = useState<ContactForm>({ name: "", email: "", project: "", message: "" });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<keyof ContactForm, boolean>>({
+    name: false,
+    email: false,
+    project: false,
+    message: false,
+  });
   const CONTACT_EMAIL = "hello@techgod.dev";
-  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-    `New project inquiry${form.name ? ` from ${form.name}` : ""}`,
-  )}&body=${encodeURIComponent(
-    `Name: ${form.name}\nEmail: ${form.email}\nProject type: ${form.project}\n\n${form.message}`,
-  )}`;
+
+  const validate = (data: ContactForm): FormErrors => {
+    const result = contactSchema.safeParse(data);
+    if (result.success) return {};
+    const fieldErrors: FormErrors = {};
+    result.error.issues.forEach((issue) => {
+      const key = issue.path[0] as keyof ContactForm;
+      if (!fieldErrors[key]) fieldErrors[key] = issue.message;
+    });
+    return fieldErrors;
+  };
+
+  const updateField = (key: keyof ContactForm, value: string) => {
+    const next = { ...form, [key]: value };
+    setForm(next);
+    setErrors(validate(next));
+  };
+
+  const handleBlur = (key: keyof ContactForm) => {
+    setTouched((prev) => ({ ...prev, [key]: true }));
+    setErrors(validate(form));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const validationErrors = validate(form);
+    setTouched({ name: true, email: true, project: true, message: true });
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      toast.error("Please fix the highlighted fields and try again.");
+      return;
+    }
+
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      `New project inquiry${form.name ? ` from ${form.name}` : ""}`,
+    )}&body=${encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nProject type: ${form.project}\n\n${form.message}`,
+    )}`;
+
+    toast.success("Message ready to send!", {
+      description: "Your email app will open with the details pre-filled.",
+      duration: 5000,
+    });
+
+    setForm({ name: "", email: "", project: "", message: "" });
+    setTouched({ name: false, email: false, project: false, message: false });
+    setErrors({});
+
+    // Open the user's default email client with the pre-filled inquiry.
+    window.location.href = mailto;
+  };
+
+  const inputBase =
+    "mt-2 w-full rounded-xl border bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald";
+  const inputError = "border-red-400 focus:border-red-400";
+  const inputOk = "border-white/15";
 
   return (
     <section id="contact" className="px-4 pb-24 sm:px-6 lg:px-8">
@@ -1177,7 +1248,8 @@ function CTA() {
           </div>
 
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
+            noValidate
             className="mx-auto mt-12 max-w-2xl rounded-3xl border border-white/15 bg-white/5 p-6 text-left backdrop-blur sm:p-8"
           >
             <div className="grid gap-4 sm:grid-cols-2">
@@ -1188,10 +1260,18 @@ function CTA() {
                 <input
                   id="cf-name"
                   value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  onChange={(e) => updateField("name", e.target.value)}
+                  onBlur={() => handleBlur("name")}
                   placeholder="Jane Doe"
-                  className="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                  className={`${inputBase} ${touched.name && errors.name ? inputError : inputOk}`}
+                  aria-invalid={touched.name && !!errors.name}
+                  aria-describedby={touched.name && errors.name ? "cf-name-error" : undefined}
                 />
+                {touched.name && errors.name && (
+                  <p id="cf-name-error" className="mt-1.5 text-xs text-red-300">
+                    {errors.name}
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor="cf-email" className="text-xs font-semibold uppercase tracking-wider text-white/60">
@@ -1201,10 +1281,18 @@ function CTA() {
                   id="cf-email"
                   type="email"
                   value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  onChange={(e) => updateField("email", e.target.value)}
+                  onBlur={() => handleBlur("email")}
                   placeholder="you@company.com"
-                  className="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                  className={`${inputBase} ${touched.email && errors.email ? inputError : inputOk}`}
+                  aria-invalid={touched.email && !!errors.email}
+                  aria-describedby={touched.email && errors.email ? "cf-email-error" : undefined}
                 />
+                {touched.email && errors.email && (
+                  <p id="cf-email-error" className="mt-1.5 text-xs text-red-300">
+                    {errors.email}
+                  </p>
+                )}
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="cf-project" className="text-xs font-semibold uppercase tracking-wider text-white/60">
@@ -1213,10 +1301,18 @@ function CTA() {
                 <input
                   id="cf-project"
                   value={form.project}
-                  onChange={(e) => setForm({ ...form, project: e.target.value })}
+                  onChange={(e) => updateField("project", e.target.value)}
+                  onBlur={() => handleBlur("project")}
                   placeholder="New Squarespace build, redesign, SEO…"
-                  className="mt-2 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                  className={`${inputBase} ${touched.project && errors.project ? inputError : inputOk}`}
+                  aria-invalid={touched.project && !!errors.project}
+                  aria-describedby={touched.project && errors.project ? "cf-project-error" : undefined}
                 />
+                {touched.project && errors.project && (
+                  <p id="cf-project-error" className="mt-1.5 text-xs text-red-300">
+                    {errors.project}
+                  </p>
+                )}
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="cf-message" className="text-xs font-semibold uppercase tracking-wider text-white/60">
@@ -1226,20 +1322,28 @@ function CTA() {
                   id="cf-message"
                   rows={4}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={(e) => updateField("message", e.target.value)}
+                  onBlur={() => handleBlur("message")}
                   placeholder="Tell me about your business, goals, timeline and budget."
-                  className="mt-2 w-full resize-y rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-emerald"
+                  className={`${inputBase} ${touched.message && errors.message ? inputError : inputOk} resize-y`}
+                  aria-invalid={touched.message && !!errors.message}
+                  aria-describedby={touched.message && errors.message ? "cf-message-error" : undefined}
                 />
+                {touched.message && errors.message && (
+                  <p id="cf-message-error" className="mt-1.5 text-xs text-red-300">
+                    {errors.message}
+                  </p>
+                )}
               </div>
             </div>
-            <a
-              href={mailto}
+            <button
+              type="submit"
               className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-emerald px-6 py-3.5 text-sm font-semibold text-emerald-foreground shadow-[0_12px_30px_-10px_oklch(0.63_0.17_148_/_0.7)] transition hover:translate-y-[-1px] sm:w-auto"
             >
               <Mail className="h-4 w-4" />
               Send to {CONTACT_EMAIL}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </button>
           </form>
         </div>
       </motion.div>
