@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { toast } from "sonner";
+import { z } from "zod";
 import {
   ArrowRight,
   ArrowUpRight,
