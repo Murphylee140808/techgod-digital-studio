@@ -1150,9 +1150,9 @@ function CTA() {
     const result = contactSchema.safeParse(data);
     if (result.success) return {};
     const fieldErrors: FormErrors = {};
-    result.error.errors.forEach((err) => {
-      const key = err.path[0] as keyof ContactForm;
-      if (!fieldErrors[key]) fieldErrors[key] = err.message;
+    result.error.issues.forEach((issue) => {
+      const key = issue.path[0] as keyof ContactForm;
+      if (!fieldErrors[key]) fieldErrors[key] = issue.message;
     });
     return fieldErrors;
   };
