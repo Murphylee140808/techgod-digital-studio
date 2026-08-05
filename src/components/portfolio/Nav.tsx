@@ -63,7 +63,7 @@ export function Nav() {
           </nav>
           <div className="flex items-center gap-2">
             <a
-              href="#contact"
+              href="tel:+2348104411111"
               className="hidden rounded-full bg-emerald px-4 py-2 text-sm font-semibold text-emerald-foreground shadow-[0_6px_20px_-6px_oklch(0.63_0.17_148_/_0.6)] transition hover:translate-y-[-1px] hover:shadow-[0_10px_26px_-8px_oklch(0.63_0.17_148_/_0.7)] md:inline-flex"
             >
               Book a call
@@ -94,7 +94,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="tel:+2348104411111"
               onClick={() => setOpen(false)}
               className="mt-1 block rounded-xl bg-emerald px-4 py-3 text-center text-sm font-semibold text-emerald-foreground"
             >
