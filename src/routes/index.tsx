@@ -1148,7 +1148,7 @@ function CTA() {
     project: false,
     message: false,
   });
-  const CONTACT_EMAIL = "hello@techgod.dev";
+  const CONTACT_EMAIL = "akindehindeomowumi@gmail.com";
   const RATE_KEY = "techgod_contact_submissions";
   const MIN_FILL_SECONDS = 3;
   const COOLDOWN_MS = 60_000;
@@ -1444,7 +1444,7 @@ function Footer() {
                 { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
                 { icon: InstagramIcon, href: "#", label: "Instagram" },
                 { icon: GithubIcon, href: "#", label: "GitHub" },
-                { icon: Mail, href: "mailto:hello@techgod.dev", label: "Email" },
+                { icon: Mail, href: "mailto:akindehindeomowumi@gmail.com", label: "Email" },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -1491,7 +1491,7 @@ function Footer() {
                 <Globe2 className="h-4 w-4 text-emerald" /> Clients Worldwide
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-emerald" /> hello@techgod.dev
+                <Mail className="h-4 w-4 text-emerald" /> akindehindeomowumi@gmail.com
               </li>
             </ul>
           </div>
