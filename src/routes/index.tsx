@@ -1548,16 +1548,15 @@ function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-2">
               {[
-                { icon: UpworkIcon, href: "#", label: "Upwork" },
-                { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
-                { icon: InstagramIcon, href: "#", label: "Instagram" },
-                { icon: GithubIcon, href: "#", label: "GitHub" },
-                { icon: Mail, href: "mailto:akindehindeomowumi@gmail.com", label: "Email" },
+                { icon: UpworkIcon, href: "https://www.upwork.com/freelancers/omowumia6", label: "Upwork" },
+                { icon: GithubIcon, href: "https://github.com/Murphylee140808", label: "GitHub" },
               ].map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="grid h-10 w-10 place-items-center rounded-full border border-border text-navy/70 transition hover:border-emerald hover:text-emerald"
                 >
                   <s.icon className="h-4 w-4" />
