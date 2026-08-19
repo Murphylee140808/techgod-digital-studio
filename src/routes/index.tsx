@@ -20,6 +20,7 @@ import {
   Layout,
   Mail,
   MapPin,
+  Monitor,
   Phone,
   Palette,
   Rocket,
@@ -30,6 +31,7 @@ import {
   Star,
   TrendingUp,
   Wrench,
+  Zap,
 } from "lucide-react";
 
 /* Social icons (lucide-react in this project doesn't export brand icons) */
@@ -162,14 +164,29 @@ const services = [
     desc: "Full Squarespace stores with polished product pages, checkout flows and analytics.",
   },
   {
+    icon: Monitor,
+    title: "Responsive Web Design",
+    desc: "Pixel-perfect layouts that look and perform beautifully on desktop, tablet and mobile.",
+  },
+  {
     icon: Braces,
     title: "Custom CSS & JavaScript",
     desc: "Advanced customisations that push Squarespace beyond its default templates.",
   },
   {
     icon: Search,
-    title: "SEO Optimization",
-    desc: "Technical, on-page and content SEO so the right clients find you on Google.",
+    title: "SEO: On-Page, Keywords, Authority & Backlinks",
+    desc: "Technical SEO, keyword research, content optimisation, authority building and backlink strategy.",
+  },
+  {
+    icon: Globe2,
+    title: "Domain Transfer & Connection",
+    desc: "Transfer or connect your domain from any hosting platform to Squarespace with zero downtime.",
+  },
+  {
+    icon: Zap,
+    title: "Zapier & Make Automation",
+    desc: "Connect Squarespace forms, CRMs, email tools and spreadsheets with smart no-code workflows.",
   },
   {
     icon: Wrench,
