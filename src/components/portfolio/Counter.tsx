@@ -14,17 +14,23 @@ export function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [n, setN] = useState(0);
+  const [n, setN] = useState(value);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (!inView) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!inView || !mounted) return;
+    setN(0);
     const controls = animate(0, value, {
       duration,
       ease: "easeOut",
       onUpdate: (v) => setN(v),
     });
     return () => controls.stop();
-  }, [inView, value, duration]);
+  }, [inView, value, duration, mounted]);
 
   return (
     <span ref={ref}>
