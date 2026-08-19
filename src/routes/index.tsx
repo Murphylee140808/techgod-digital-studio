@@ -84,6 +84,13 @@ import coastlineAsset from "@/assets/coastline.asset.json";
 import clearpathAsset from "@/assets/clearpath.asset.json";
 import lumenAsset from "@/assets/lumen.asset.json";
 import lakeislandAsset from "@/assets/lakeisland.asset.json";
+import willowAsset from "@/assets/willow.asset.json";
+import memorabilityAsset from "@/assets/memorability.asset.json";
+import luminaAsset from "@/assets/lumina.asset.json";
+import verdeoAsset from "@/assets/verdeo.asset.json";
+import harmonyAsset from "@/assets/harmony.asset.json";
+import eidolonAsset from "@/assets/eidolon.asset.json";
+import atelierAsset from "@/assets/atelier.asset.json";
 import { Nav } from "@/components/portfolio/Nav";
 import { Counter } from "@/components/portfolio/Counter";
 
@@ -353,6 +360,90 @@ const projects: {
       "Editorial hero, client logo trust bar, statistics module, program pages and detailed case studies.",
     tech: ["Squarespace 7.1", "Custom CSS", "Forms", "Schema.org"],
     image: lakeislandAsset.url,
+  },
+  {
+    title: "Willow & Stone Country Stay",
+    industry: "Boutique Hospitality",
+    category: "Business",
+    overview:
+      "A boutique accommodation and function-space site built to showcase rooms and capture direct bookings.",
+    challenge: "Guests couldn't easily compare rooms or enquire about events without calling.",
+    solution:
+      "Rustic editorial layout, room detail pages, event capacity modules and a booking-first CTA on every screen.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Acuity", "SEO"],
+    image: willowAsset.url,
+  },
+  {
+    title: "Memorability Creative Strategy",
+    industry: "Marketing & Creative Strategy",
+    category: "Portfolio",
+    overview:
+      "A cinematic personal-brand site for a DTC creative strategist, led by video and measurable results.",
+    challenge: "Strong results were buried in decks instead of visible on the website.",
+    solution:
+      "Full-bleed video hero, brand trust bar and case studies fronted with ROAS, CVR and reach metrics.",
+    tech: ["Squarespace 7.1", "Custom CSS", "Video Backgrounds", "SEO"],
+    image: memorabilityAsset.url,
+  },
+  {
+    title: "Lumina Wellness",
+    industry: "Yoga & Online Courses",
+    category: "Wellness",
+    overview:
+      "A yoga studio and course platform with live class calendar, memberships and class packages.",
+    challenge: "Scheduling, memberships and course sales lived across three disconnected tools.",
+    solution:
+      "Unified Squarespace build with class calendar, tabbed membership pricing and packaged checkout flows.",
+    tech: ["Squarespace 7.1", "Acuity", "Member Areas", "Custom CSS"],
+    image: luminaAsset.url,
+  },
+  {
+    title: "Verdeo Spa",
+    industry: "Spa & Wellbeing",
+    category: "Wellness",
+    overview:
+      "A dark, gold-accented spa site with a complete multi-step appointment booking experience.",
+    challenge: "Phone-only bookings caused missed appointments and admin overload.",
+    solution:
+      "Service menu with pricing, staff and time selection, payment step and an automated confirmation screen.",
+    tech: ["Squarespace 7.1", "Acuity", "Custom CSS", "Automations"],
+    image: verdeoAsset.url,
+  },
+  {
+    title: "Harmony & Horizon Yoga",
+    industry: "Yoga, Retreats & Membership",
+    category: "Wellness",
+    overview:
+      "A wellness brand site pairing a free video library with paid programs and international retreats.",
+    challenge: "Hundreds of videos and retreat details were impossible to browse or filter.",
+    solution:
+      "Filterable video library, program pages and a retreat template with pricing, schedule and FAQ tabs.",
+    tech: ["Squarespace 7.1", "Member Areas", "Custom CSS", "SEO"],
+    image: harmonyAsset.url,
+  },
+  {
+    title: "Eidolon Artworks",
+    industry: "Fine Art E-commerce",
+    category: "E-commerce",
+    overview:
+      "A moody gallery store selling original paintings, prints, commissions and creative workshops.",
+    challenge: "Artwork variants and commission enquiries needed to sit in one clean storefront.",
+    solution:
+      "Dark gallery styling, size and framing product variants, filtered print shop and a commission enquiry flow.",
+    tech: ["Squarespace 7.1", "Commerce", "Custom CSS", "Product Variants"],
+    image: eidolonAsset.url,
+  },
+  {
+    title: "Atelier Marcel",
+    industry: "Interior Design & Construction",
+    category: "Business",
+    overview:
+      "One site for three sister companies covering interiors, construction and custom cabinetry, plus a shop.",
+    challenge: "Three brands competing for attention with no clear path between them.",
+    solution:
+      "Unified brand architecture, filterable project galleries and a curated home-decor shop under one roof.",
+    tech: ["Squarespace 7.1", "Commerce", "Custom CSS", "SEO"],
+    image: atelierAsset.url,
   },
 ];
 
