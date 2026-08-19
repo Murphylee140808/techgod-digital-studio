@@ -20,6 +20,7 @@ import {
   Layout,
   Mail,
   MapPin,
+  Monitor,
   Phone,
   Palette,
   Rocket,
@@ -30,6 +31,7 @@ import {
   Star,
   TrendingUp,
   Wrench,
+  Zap,
 } from "lucide-react";
 
 /* Social icons (lucide-react in this project doesn't export brand icons) */
