@@ -1537,9 +1537,11 @@ function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <a href="#top" className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold">
-                T
-              </span>
+              <img
+                src={portraitAsset.url}
+                alt="Omowumi Akindehinde"
+                className="h-9 w-9 rounded-full object-cover ring-1 ring-border"
+              />
               <span className="font-display text-xl font-bold text-navy">Omowumi Akindehinde</span>
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
