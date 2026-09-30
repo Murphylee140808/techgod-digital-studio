@@ -3,12 +3,12 @@ import { defineTool } from "@lovable.dev/mcp-js";
 export default defineTool({
   name: "get_contact",
   title: "Get contact info",
-  description: "How to hire Techgod: preferred contact channels and what info to include when reaching out.",
+  description: "How to hire Omowumi Akindehinde: preferred contact channels and what info to include when reaching out.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const contact = {
-      website: "https://techgod-digital-studio.lovable.app",
+      website: "https://omowumi-akindehinde.lovable.app",
       preferred: "Contact form on the portfolio site",
       include: [
         "Your business name & industry",

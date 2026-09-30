@@ -43,11 +43,11 @@ export function Nav() {
           )}
         >
           <a href="#top" className="group flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold">
-              T
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold text-xs">
+              OA
             </span>
             <span className="font-display text-lg font-bold tracking-tight text-navy">
-              Techgod
+              Omowumi Akindehinde
             </span>
           </a>
           <nav className="hidden items-center gap-1 md:flex">

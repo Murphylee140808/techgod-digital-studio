@@ -21,7 +21,7 @@ const services = [
 export default defineTool({
   name: "list_services",
   title: "List services",
-  description: "List the Squarespace services Techgod offers with short descriptions.",
+  description: "List the Squarespace services Omowumi Akindehinde offers with short descriptions.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({

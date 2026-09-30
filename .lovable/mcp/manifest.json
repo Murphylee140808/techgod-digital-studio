@@ -7,15 +7,15 @@
   },
   "mcp": {
     "server": {
-      "name": "techgod-portfolio-mcp",
+      "name": "omowumi-portfolio-mcp",
       "version": "0.1.0",
-      "title": "Techgod Portfolio"
+      "title": "Omowumi Akindehinde Portfolio"
     },
     "tools": [
       {
         "name": "get_profile",
-        "title": "Get Techgod profile",
-        "description": "Return Omowumi A. (Techgod)'s professional profile: name, role, tagline, bio, and public contact details.",
+        "title": "Get Omowumi Akindehinde profile",
+        "description": "Return Omowumi Akindehinde's professional profile: name, role, tagline, bio, and public contact details.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -31,7 +31,7 @@
       {
         "name": "list_services",
         "title": "List services",
-        "description": "List the Squarespace services Techgod offers with short descriptions.",
+        "description": "List the Squarespace services Omowumi Akindehinde offers with short descriptions.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -47,7 +47,7 @@
       {
         "name": "list_projects",
         "title": "List portfolio projects",
-        "description": "List Techgod's featured Squarespace case studies with category and summary.",
+        "description": "List Omowumi Akindehinde's featured Squarespace case studies with category and summary.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -63,7 +63,7 @@
       {
         "name": "get_contact",
         "title": "Get contact info",
-        "description": "How to hire Techgod: preferred contact channels and what info to include when reaching out.",
+        "description": "How to hire Omowumi Akindehinde: preferred contact channels and what info to include when reaching out.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,

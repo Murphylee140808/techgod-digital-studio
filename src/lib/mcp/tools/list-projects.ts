@@ -31,7 +31,7 @@ const projects = [
 export default defineTool({
   name: "list_projects",
   title: "List portfolio projects",
-  description: "List Techgod's featured Squarespace case studies with category and summary.",
+  description: "List Omowumi Akindehinde's featured Squarespace case studies with category and summary.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
