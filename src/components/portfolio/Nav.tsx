@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import portraitAsset from "@/assets/portrait.asset.json";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -43,9 +44,11 @@ export function Nav() {
           )}
         >
           <a href="#top" className="group flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold text-xs">
-              OA
-            </span>
+            <img
+              src={portraitAsset.url}
+              alt="Omowumi Akindehinde"
+              className="h-9 w-9 rounded-full object-cover ring-2 ring-emerald/40"
+            />
             <span className="font-display text-lg font-bold tracking-tight text-navy">
               Omowumi Akindehinde
             </span>
