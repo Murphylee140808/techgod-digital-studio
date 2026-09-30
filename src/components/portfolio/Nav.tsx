@@ -47,7 +47,7 @@ export function Nav() {
               T
             </span>
             <span className="font-display text-lg font-bold tracking-tight text-navy">
-              Techgod
+              Omowumi Akindehinde
             </span>
           </a>
           <nav className="hidden items-center gap-1 md:flex">

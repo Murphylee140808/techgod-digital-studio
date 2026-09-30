@@ -78,23 +78,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Techgod — Squarespace Website Designer & Developer" },
+      { title: "Omowumi Akindehinde — Squarespace Website Designer & Developer" },
       {
         name: "description",
         content:
-          "Omowumi A. (Techgod) designs premium Squarespace websites that generate leads and convert visitors into clients. 60+ projects · 100% Job Success.",
+          "Omowumi Akindehinde designs premium Squarespace websites that generate leads and convert visitors into clients. 60+ projects · 100% Job Success.",
       },
-      { name: "author", content: "Omowumi A. (Techgod)" },
-      { property: "og:title", content: "Techgod — Squarespace Website Designer & Developer" },
+      { name: "author", content: "Omowumi Akindehinde" },
+      { property: "og:title", content: "Omowumi Akindehinde — Squarespace Website Designer & Developer" },
       {
         property: "og:description",
         content:
           "Premium Squarespace websites for coaches, consultants and creative brands. Built to generate leads and grow your business.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Techgod" },
+      { property: "og:site_name", content: "Omowumi Akindehinde" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Techgod — Squarespace Website Designer & Developer" },
+      { name: "twitter:title", content: "Omowumi Akindehinde — Squarespace Website Designer & Developer" },
       {
         name: "twitter:description",
         content:
@@ -124,7 +124,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             {
               "@type": "Person",
               name: "Omowumi A.",
-              alternateName: "Techgod",
+              alternateName: "Omowumi Akindehinde",
               jobTitle: "Squarespace Website Designer & Developer",
               address: {
                 "@type": "PostalAddress",
@@ -140,7 +140,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "ProfessionalService",
-              name: "Techgod",
+              name: "Omowumi Akindehinde",
               description:
                 "Premium Squarespace website design and development for coaches, consultants, creatives and service businesses.",
               areaServed: "Worldwide",

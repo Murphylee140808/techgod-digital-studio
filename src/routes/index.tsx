@@ -99,15 +99,15 @@ import { Counter } from "@/components/portfolio/Counter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Techgod — Squarespace Websites That Generate Leads" },
+      { title: "Omowumi Akindehinde — Squarespace Websites That Generate Leads" },
       {
         name: "description",
         content:
-          "Premium Squarespace website design & development by Omowumi A. (Techgod). Built for coaches, consultants, creatives and service businesses to convert visitors into clients.",
+          "Premium Squarespace website design & development by Omowumi Akindehinde. Built for coaches, consultants, creatives and service businesses to convert visitors into clients.",
       },
       {
         property: "og:title",
-        content: "Techgod — Squarespace Websites That Generate Leads",
+        content: "Omowumi Akindehinde — Squarespace Websites That Generate Leads",
       },
       {
         property: "og:description",
@@ -687,7 +687,7 @@ function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-border bg-secondary shadow-[0_30px_80px_-30px_rgb(15_23_42_/_0.35)]">
               <img
                 src={portraitAsset.url}
-                alt="Omowumi A. (Techgod), Squarespace website designer & developer, in a navy suit"
+                alt="Omowumi Akindehinde, Squarespace website designer & developer, in a navy suit"
                 className="aspect-[4/5] w-full object-cover"
                 loading="eager"
               />
@@ -697,7 +697,7 @@ function Hero() {
                   Port Harcourt, Nigeria · Serving clients worldwide
                 </div>
                 <div className="mt-1 font-display text-xl font-semibold">
-                  Omowumi A. — Techgod
+                  Omowumi Akindehinde
                 </div>
               </div>
             </div>
@@ -1540,7 +1540,7 @@ function Footer() {
               <span className="grid h-9 w-9 place-items-center rounded-full bg-navy text-navy-foreground font-display font-bold">
                 T
               </span>
-              <span className="font-display text-xl font-bold text-navy">Techgod</span>
+              <span className="font-display text-xl font-bold text-navy">Omowumi Akindehinde</span>
             </a>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Premium Squarespace websites for coaches, consultants, creatives and
@@ -1605,7 +1605,7 @@ function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
-          <div>© 2026 Techgod. All Rights Reserved.</div>
+          <div>© 2026 Omowumi Akindehinde. All Rights Reserved.</div>
           <div>Designed & built by Omowumi A.</div>
         </div>
       </div>

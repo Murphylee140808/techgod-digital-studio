@@ -2,14 +2,14 @@ import { defineTool } from "@lovable.dev/mcp-js";
 
 export default defineTool({
   name: "get_profile",
-  title: "Get Techgod profile",
+  title: "Get Omowumi Akindehinde profile",
   description:
-    "Return Omowumi A. (Techgod)'s professional profile: name, role, tagline, bio, and public contact details.",
+    "Return Omowumi Akindehinde's professional profile: name, role, tagline, bio, and public contact details.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const profile = {
-      name: "Omowumi A. (Techgod)",
+      name: "Omowumi Akindehinde",
       role: "Squarespace Web Designer & Developer",
       specialties: [
         "Custom Squarespace 7.1 sites",
@@ -19,7 +19,7 @@ export default defineTool({
         "Lead generation",
       ],
       bio: "Squarespace specialist helping service businesses launch premium, high-converting websites with custom design, CMS setup, and SEO.",
-      website: "https://techgod-digital-studio.lovable.app",
+      website: "https://omowumi-akindehinde.lovable.app",
       location: "Remote — works with clients worldwide",
     };
     return {
